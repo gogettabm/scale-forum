@@ -38,7 +38,9 @@ function Feed() {
   return (
     <div className="feed">
       <section className="hero">
-        <h1 className="hero__title">Climate at every scale</h1>
+        <h1 className="hero__title">
+          Climate at <em>every</em> scale
+        </h1>
         <p className="hero__lede">
           The climate crisis isn't one story — it's the same story at different
           zoom levels. Tag your post by the scale of impact it discusses, then

@@ -7,22 +7,31 @@ import "./PostCard.css";
 // upvote count — body text and images live on the individual post page.
 function PostCard({ post }) {
   const meta = scaleMeta(post.scale);
+  const slug = post.scale?.toLowerCase();
 
   return (
-    <Link to={`/post/${post.id}`} className="pcard">
+    <Link to={`/post/${post.id}`} className={`pcard pcard--${slug}`}>
       <div className="pcard__votes">
         <span className="pcard__arrow" aria-hidden="true">
           ▲
         </span>
         <span className="pcard__count">{post.upvotes ?? 0}</span>
+        <span className="pcard__votelabel">
+          {post.upvotes === 1 ? "vote" : "votes"}
+        </span>
       </div>
 
       <div className="pcard__body">
-        <span className={`scaletag scaletag--${post.scale?.toLowerCase()}`}>
-          {meta.emoji} {post.scale}
-        </span>
         <h2 className="pcard__title">{post.title}</h2>
-        <span className="pcard__time">posted {timeAgo(post.created_at)}</span>
+        <div className="pcard__foot">
+          <span className={`scaletag scaletag--${slug}`}>
+            <span aria-hidden="true">{meta.emoji}</span> {post.scale}
+          </span>
+          <span className="pcard__dot" aria-hidden="true">
+            ●
+          </span>
+          <span className="pcard__time">{timeAgo(post.created_at)}</span>
+        </div>
       </div>
     </Link>
   );

@@ -1,45 +1,50 @@
 .post {
-  background: var(--surface);
-  border: 1px solid var(--line);
-  border-radius: 14px;
-  padding: 1.6rem;
+  background: var(--card);
+  border: 1px solid var(--rule);
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: var(--shadow-sm);
 }
 
 .post__title {
-  font-size: 1.75rem;
-  font-weight: 800;
-  line-height: 1.25;
-  margin: 0.7rem 0 0.35rem;
+  font-family: var(--serif);
+  font-size: clamp(1.7rem, 4vw, 2.35rem);
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.025em;
+  margin: 0.85rem 0 0.5rem;
 }
 
 .post__time {
-  color: var(--ink-mute);
-  font-size: 0.82rem;
+  color: var(--ink-3);
+  font-size: 0.83rem;
 }
 
 .post__content {
   color: var(--ink);
-  line-height: 1.7;
-  margin-top: 1.1rem;
+  font-size: 1.06rem;
+  line-height: 1.75;
+  margin-top: 1.35rem;
   white-space: pre-wrap;
+  max-width: 66ch;
 }
 
 .post__image {
   display: block;
   width: 100%;
-  border-radius: 10px;
-  margin-top: 1.25rem;
-  border: 1px solid var(--line);
+  border-radius: 12px;
+  margin-top: 1.5rem;
+  border: 1px solid var(--rule);
 }
 
 .post__video {
   position: relative;
   width: 100%;
   padding-top: 56.25%; /* 16:9 */
-  margin-top: 1.25rem;
-  border-radius: 10px;
+  margin-top: 1.5rem;
+  border-radius: 12px;
   overflow: hidden;
-  border: 1px solid var(--line);
+  border: 1px solid var(--rule);
 }
 
 .post__video iframe {
@@ -52,29 +57,39 @@
 
 .post__actions {
   display: flex;
-  gap: 0.6rem;
+  gap: 0.55rem;
   align-items: center;
-  margin-top: 1.5rem;
-  padding-top: 1.25rem;
-  border-top: 1px solid var(--line);
+  margin-top: 1.85rem;
+  padding-top: 1.4rem;
+  border-top: 1px solid var(--rule);
   flex-wrap: wrap;
 }
 
 .upvote {
-  background: rgba(74, 222, 128, 0.12);
-  border: 1px solid var(--accent);
-  color: var(--accent);
-  padding: 0.55rem 1.2rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  background: var(--clay-deep);
+  border: 1px solid var(--clay-deep);
+  color: #fff;
+  padding: 0.6rem 1.3rem;
   border-radius: 8px;
+  font-family: var(--sans);
   font-size: 0.92rem;
+  font-weight: 600;
   cursor: pointer;
-  transition: transform 0.1s;
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.1s, background 0.15s;
 }
 
 .upvote:hover {
-  background: rgba(74, 222, 128, 0.22);
+  background: #8e3f20;
 }
 
 .upvote:active {
   transform: scale(0.97);
+}
+
+.upvote strong {
+  font-variant-numeric: tabular-nums;
 }
