@@ -1,0 +1,237 @@
+:root {
+  --bg: #0d1512;
+  --surface: #141f1b;
+  --surface-2: #1b2a25;
+  --line: #263a33;
+  --ink: #e9f1ed;
+  --ink-dim: #9bb0a8;
+  --ink-mute: #6d8279;
+  --accent: #4ade80;
+  --accent-deep: #22a35c;
+  --ocean: #38bdf8;
+  --sand: #fbbf24;
+  --danger: #f87171;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.app {
+  min-height: 100vh;
+  background: var(--bg);
+  background-image: radial-gradient(
+      ellipse at 15% -10%,
+      rgba(74, 222, 128, 0.09) 0%,
+      transparent 55%
+    ),
+    radial-gradient(
+      ellipse at 90% 0%,
+      rgba(56, 189, 248, 0.07) 0%,
+      transparent 45%
+    );
+  color: var(--ink);
+  display: flex;
+  flex-direction: column;
+}
+
+/* ---- Top bar ---- */
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem 2rem;
+  border-bottom: 1px solid var(--line);
+  position: sticky;
+  top: 0;
+  background: rgba(13, 21, 18, 0.92);
+  backdrop-filter: blur(10px);
+  z-index: 20;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  text-decoration: none;
+  color: var(--ink);
+}
+
+.brand__mark {
+  font-size: 1.6rem;
+  color: var(--accent);
+}
+
+.brand__text {
+  display: flex;
+  flex-direction: column;
+  font-weight: 800;
+  font-size: 1.25rem;
+  letter-spacing: 0.5px;
+}
+
+.brand__tag {
+  font-size: 0.68rem;
+  font-weight: 500;
+  color: var(--ink-mute);
+  letter-spacing: 0.3px;
+}
+
+.topbar__nav {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.navlink {
+  color: var(--ink-dim);
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  font-size: 0.95rem;
+}
+
+.navlink:hover {
+  color: var(--ink);
+  background: var(--surface-2);
+}
+
+.navlink.is-active {
+  color: var(--accent);
+}
+
+.navlink--cta {
+  background: var(--accent);
+  color: #08120d;
+  font-weight: 700;
+}
+
+.navlink--cta:hover {
+  background: var(--accent-deep);
+  color: #fff;
+}
+
+/* ---- Layout ---- */
+.main {
+  flex: 1;
+  width: 100%;
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 2rem 1.25rem 4rem;
+}
+
+.page__title {
+  font-size: 1.9rem;
+  font-weight: 800;
+  margin-bottom: 0.4rem;
+}
+
+.page__sub {
+  color: var(--ink-dim);
+  margin-bottom: 1.75rem;
+  line-height: 1.5;
+}
+
+.page__status {
+  text-align: center;
+  padding: 3rem;
+  color: var(--ink-dim);
+}
+
+.backlink {
+  display: inline-block;
+  color: var(--ink-dim);
+  text-decoration: none;
+  margin-bottom: 1.25rem;
+  font-size: 0.9rem;
+}
+
+.backlink:hover {
+  color: var(--accent);
+}
+
+/* ---- Buttons ---- */
+.btn {
+  padding: 0.55rem 1.1rem;
+  border-radius: 8px;
+  border: 1px solid var(--line);
+  background: var(--surface-2);
+  color: var(--ink);
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+.btn:hover {
+  border-color: var(--ink-mute);
+}
+
+.btn--ghost:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.btn--danger {
+  color: var(--danger);
+}
+
+.btn--danger:hover {
+  border-color: var(--danger);
+  background: rgba(248, 113, 113, 0.1);
+}
+
+/* ---- Scale tags (shared) ---- */
+.scaletag {
+  display: inline-block;
+  align-self: flex-start; /* don't stretch inside flex columns */
+  width: fit-content;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  padding: 0.2rem 0.65rem;
+  border-radius: 999px;
+  border: 1px solid;
+}
+
+.scaletag--global {
+  color: #7dd3fc;
+  border-color: rgba(125, 211, 252, 0.5);
+  background: rgba(125, 211, 252, 0.1);
+}
+.scaletag--national {
+  color: #c4b5fd;
+  border-color: rgba(196, 181, 253, 0.5);
+  background: rgba(196, 181, 253, 0.1);
+}
+.scaletag--regional {
+  color: #fcd34d;
+  border-color: rgba(252, 211, 77, 0.5);
+  background: rgba(252, 211, 77, 0.1);
+}
+.scaletag--local {
+  color: #86efac;
+  border-color: rgba(134, 239, 172, 0.5);
+  background: rgba(134, 239, 172, 0.1);
+}
+
+.footer {
+  border-top: 1px solid var(--line);
+  padding: 1.5rem;
+  text-align: center;
+  color: var(--ink-mute);
+  font-size: 0.82rem;
+}
+
+@media (max-width: 620px) {
+  .topbar {
+    padding: 0.85rem 1rem;
+  }
+  .brand__tag {
+    display: none;
+  }
+}

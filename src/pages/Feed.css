@@ -1,0 +1,119 @@
+.hero {
+  margin-bottom: 1.75rem;
+}
+
+.hero__title {
+  font-size: 2.1rem;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  background: linear-gradient(90deg, #4ade80, #38bdf8);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.hero__lede {
+  color: var(--ink-dim);
+  line-height: 1.6;
+  margin-top: 0.6rem;
+  max-width: 62ch;
+}
+
+/* Scale filter bar */
+.scalebar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.scalechip {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  color: var(--ink-dim);
+  padding: 0.45rem 0.95rem;
+  border-radius: 999px;
+  font-size: 0.86rem;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.scalechip:hover {
+  border-color: var(--ink-mute);
+  color: var(--ink);
+}
+
+.scalechip.is-active {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #08120d;
+  font-weight: 700;
+}
+
+/* Search + sort */
+.controls {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 1.5rem;
+}
+
+.controls__search {
+  flex: 1;
+  min-width: 220px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  color: var(--ink);
+  padding: 0.65rem 0.9rem;
+  font-size: 0.95rem;
+  outline: none;
+}
+
+.controls__search:focus {
+  border-color: var(--accent);
+}
+
+.controls__sort {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.controls__label {
+  font-size: 0.78rem;
+  color: var(--ink-mute);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.sortbtn {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  color: var(--ink-dim);
+  padding: 0.45rem 0.85rem;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  cursor: pointer;
+}
+
+.sortbtn.is-active {
+  border-color: var(--accent);
+  color: var(--accent);
+  background: rgba(74, 222, 128, 0.1);
+}
+
+.feed__list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.feed__empty {
+  text-align: center;
+  padding: 3rem 1rem;
+  color: var(--ink-mute);
+  border: 1px dashed var(--line);
+  border-radius: 12px;
+}

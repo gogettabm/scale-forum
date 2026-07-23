@@ -1,0 +1,58 @@
+.pcard {
+  display: flex;
+  gap: 1rem;
+  align-items: stretch;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 1rem 1.15rem;
+  text-decoration: none;
+  color: inherit;
+  transition: border-color 0.15s, transform 0.15s;
+}
+
+.pcard:hover {
+  border-color: var(--accent);
+  transform: translateY(-1px);
+}
+
+.pcard__votes {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-width: 52px;
+  background: var(--surface-2);
+  border-radius: 10px;
+  padding: 0.4rem;
+}
+
+.pcard__arrow {
+  color: var(--accent);
+  font-size: 0.85rem;
+  line-height: 1;
+}
+
+.pcard__count {
+  font-weight: 800;
+  font-size: 1.1rem;
+  margin-top: 0.15rem;
+}
+
+.pcard__body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  justify-content: center;
+}
+
+.pcard__title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  line-height: 1.35;
+}
+
+.pcard__time {
+  font-size: 0.78rem;
+  color: var(--ink-mute);
+}
